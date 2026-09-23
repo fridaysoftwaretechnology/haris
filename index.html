@@ -3,27 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haris Institute — Secure Login</title>
+    <title>HARIS INSTITUTE — Secure Login</title>
 
     <style>
-
         :root {
-            --gold: #D4AF37;
-            --gold-light: #F7E7A8;
-            --gold-bright: #FFD700;
-            --gold-dark: #9C7A1B;
-            --gold-deep: #6E5412;
-            --black: #050505;
-            --black-soft: #0D0D0D;
-            --black-card: #111111;
+            --navy: #0B1F3A;
+            --navy-soft: #12345B;
+            --navy-card: #F8FAFD;
             --white: #FFFFFF;
-            --white-soft: #FFFDF5;
-            --gray-100: #F8F1D2;
-            --gray-200: #E8DFAF;
-            --gray-400: #5F531F;
-            --gray-600: #403813;
-            --danger: #A51D2D;
-            --success: #167A4A;
+            --white-soft: #F6F8FB;
+            --gray-100: #EEF2F7;
+            --gray-200: #334155;
+            --gray-400: #64748B;
+            --gray-600: #475569;
+            --danger: #C62828;
+            --success: #178A55;
             --radius: 16px;
         }
 
@@ -37,8 +31,8 @@
 
         body {
             min-height: 100vh;
-            background: var(--gold);
-            color: var(--black);
+            background: #F4F7FB;
+            color: var(--navy);
             overflow-x: hidden;
         }
 
@@ -51,8 +45,8 @@
             padding: 30px 20px;
             overflow: hidden;
             background:
-                radial-gradient(circle at 15% 20%, rgba(255,255,255,.22), transparent 30%),
-                radial-gradient(circle at 85% 80%, rgba(255,255,255,.18), transparent 30%),
+                radial-gradient(circle at 10% 15%, rgba(212,175,55,.16), transparent 30%),
+                radial-gradient(circle at 90% 85%, rgba(11,31,58,.12), transparent 32%),
                 #050505;
         }
 
@@ -61,8 +55,8 @@
             inset: 0;
             opacity: .15;
             background-image:
-                linear-gradient(rgba(80,60,0,.12) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(80,60,0,.12) 1px, transparent 1px);
+                linear-gradient(rgba(11,31,58,.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(11,31,58,.035) 1px, transparent 1px);
             background-size: 45px 45px;
             mask-image: linear-gradient(to bottom, black, transparent);
         }
@@ -72,7 +66,7 @@
             width: 500px;
             height: 500px;
             border-radius: 50%;
-            background: rgba(255,255,255,.18);
+            background: rgba(212,175,55,.08);
             filter: blur(80px);
             pointer-events: none;
         }
@@ -90,10 +84,10 @@
         .login-card {
             position: relative;
             padding: 42px 40px 35px;
-            background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(92,67,0,.08));
-            border: 1px solid rgba(92,67,0,.30);
+            background: linear-gradient(145deg, #FFFFFF, #F7F9FC);
+            border: 1px solid rgba(11,31,58,.10);
             border-radius: var(--radius);
-            box-shadow: 0 30px 80px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.18);
+            box-shadow: 0 24px 65px rgba(11,31,58,.14), 0 2px 0 rgba(212,175,55,.28);
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
             animation: cardAppear .55s ease;
@@ -117,8 +111,8 @@
             height: 105px;
             object-fit: contain;
             border-radius: 14px;
-            box-shadow: 0 15px 35px rgba(0,0,0,.4);
-            background: var(--gold);
+            box-shadow: 0 12px 28px rgba(11,31,58,.16);
+            background: #FFFFFF;
             animation: logoAppear .7s ease;
         }
 
@@ -133,7 +127,8 @@
         }
 
         .header h1 {
-            color: var(--black);
+            color: var(--navy);
+            text-shadow: 0 1px 0 rgba(212,175,55,.18);
             font-size: 28px;
             font-weight: 700;
             letter-spacing: -.7px;
@@ -141,7 +136,7 @@
         }
 
         .header p {
-            color: var(--gray-400);
+            color: #64748B;
             font-size: 13px;
             line-height: 1.5;
         }
@@ -151,7 +146,7 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: var(--gray-200);
+            color: #243B53;
             font-size: 13px;
             font-weight: 600;
             letter-spacing: .2px;
@@ -163,22 +158,22 @@
             width: 100%;
             height: 52px;
             padding: 0 58px 0 16px;
-            color: var(--black);
-            background: rgba(255,255,255,.28);
-            border: 1px solid rgba(92,67,0,.30);
+            color: var(--navy);
+            background: rgba(255,255,255,.045);
+            border: 1px solid rgba(11,31,58,.12);
             border-radius: 10px;
             outline: none;
             font-size: 14px;
             transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
         }
 
-        .input-wrapper input::placeholder { color: #5F531F; }
-        .input-wrapper input:hover { border-color: rgba(255,255,255,.22); }
+        .input-wrapper input::placeholder { color: #94A3B8; }
+        .input-wrapper input:hover { border-color: rgba(11,31,58,.28); }
 
         .input-wrapper input:focus {
-            background: rgba(255,255,255,.34);
-            border-color: var(--gold-dark);
-            box-shadow: 0 0 0 3px rgba(92,67,0,.12);
+            background: #FFFFFF;
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212,175,55,.15);
         }
 
         .input-icon {
@@ -186,7 +181,7 @@
             right: 16px;
             top: 50%;
             transform: translateY(-50%);
-            color: #6B5D28;
+            color: #64748B;
             font-size: 14px;
             pointer-events: none;
         }
@@ -198,7 +193,7 @@
             transform: translateY(-50%);
             border: none;
             background: transparent;
-            color: #675A25;
+            color: #64748B;
             font-size: 12px;
             font-weight: 600;
             cursor: pointer;
@@ -206,7 +201,7 @@
             z-index: 2;
         }
 
-        .password-toggle:hover { color: var(--black); }
+        .password-toggle:hover { color: var(--navy); }
 
         .error-message,
         .success-message {
@@ -248,19 +243,19 @@
             margin-top: 4px;
             border: none;
             border-radius: 10px;
-            background: var(--black);
-            color: var(--black);
+            background: #173F73;
+            color: var(--navy);
             font-size: 14px;
             font-weight: 700;
             cursor: pointer;
             transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
-            box-shadow: 0 12px 30px rgba(70,50,0,.25);
+            box-shadow: 0 12px 30px rgba(2,12,30,.30);
         }
 
         .login-button:hover {
-            background: var(--gold-light);
+            background: #D4AF37;
             transform: translateY(-1px);
-            box-shadow: 0 15px 35px rgba(0,0,0,.35);
+            box-shadow: 0 15px 35px rgba(2,12,30,.40);
         }
 
         .login-button:active { transform: translateY(0); }
@@ -276,8 +271,8 @@
         .spinner {
             width: 17px;
             height: 17px;
-            border: 2px solid rgba(0,0,0,.25);
-            border-top-color: var(--gold-bright);
+            border: 2px solid rgba(212,175,55,.25);
+            border-top-color: #D4AF37;
             border-radius: 50%;
             animation: spin .7s linear infinite;
         }
@@ -289,24 +284,24 @@
             margin: 17px auto 0;
             border: 0;
             background: transparent;
-            color: #4E4318;
+            color: #64748B;
             font-size: 12px;
             font-weight: 600;
             cursor: pointer;
             padding: 5px 8px;
         }
 
-        .forgot-password:hover { color: var(--black); text-decoration: underline; }
+        .forgot-password:hover { color: #B08D1E; text-decoration: underline; }
 
         .footer {
             margin-top: 28px;
             padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,.22);
+            border-top: 1px solid rgba(11,31,58,.09);
             text-align: center;
         }
 
-        .footer p { color: #5F531F; font-size: 11px; line-height: 1.6; }
-        .footer strong { color: #4E4318; font-weight: 600; }
+        .footer p { color: #64748B; font-size: 11px; line-height: 1.6; }
+        .footer strong { color: #64748B; font-weight: 600; }
 
         .success-screen {
             position: fixed;
@@ -315,7 +310,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--gold);
+            background: #F4F7FB;
             opacity: 0;
             visibility: hidden;
             transition: opacity .3s ease, visibility .3s ease;
@@ -340,14 +335,14 @@
         }
 
         .success-content h2 { font-size: 23px; margin-bottom: 8px; }
-        .success-content p { color: #675A25; font-size: 13px; }
+        .success-content p { color: #64748B; font-size: 13px; }
 
         .success-spinner {
             width: 32px;
             height: 32px;
             margin: 22px auto;
-            border: 3px solid rgba(92,67,0,.25);
-            border-top-color: var(--black);
+            border: 3px solid rgba(255,255,255,.1);
+            border-top-color: var(--navy);
             border-radius: 50%;
             animation: spin .8s linear infinite;
         }
@@ -362,7 +357,7 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
-            background: rgba(0,0,0,.72);
+            background: rgba(11,31,58,.35);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             opacity: 0;
@@ -383,10 +378,10 @@
             max-height: 90vh;
             overflow-y: auto;
             padding: 30px;
-            background: linear-gradient(145deg, #171717, #0d0d0d);
-            border: 1px solid rgba(92,67,0,.30);
+            background: linear-gradient(145deg, #FFFFFF, #F7F9FC);;
+            border: 1px solid rgba(11,31,58,.12);
             border-radius: 16px;
-            box-shadow: 0 30px 90px rgba(0,0,0,.65);
+            box-shadow: 0 30px 90px rgba(11,31,58,.20);
             transform: translateY(15px) scale(.98);
             transition: transform .25s ease;
         }
@@ -402,64 +397,64 @@
         }
 
         .modal-header h2 { font-size: 21px; margin-bottom: 6px; }
-        .modal-header p { color: #675A25; font-size: 12px; line-height: 1.5; }
+        .modal-header p { color: #64748B; font-size: 12px; line-height: 1.5; }
 
         .modal-close {
             flex: 0 0 auto;
             width: 34px;
             height: 34px;
-            border: 1px solid rgba(92,67,0,.25);
+            border: 1px solid rgba(11,31,58,.12);
             border-radius: 9px;
-            background: rgba(80,60,0,.12);
-            color: #4E4318;
+            background: #F4F7FB;
+            color: #64748B;
             cursor: pointer;
             font-size: 20px;
             line-height: 1;
         }
 
-        .modal-close:hover { color: var(--black); background: rgba(255,255,255,.22); }
+        .modal-close:hover { color: #fff; background: #E8EEF6; }
 
         .modal-note {
             margin-bottom: 20px;
             padding: 12px 13px;
-            border: 1px solid rgba(92,67,0,.22);
+            border: 1px solid rgba(11,31,58,.09);
             border-radius: 9px;
-            color: #4E4318;
-            background: rgba(92,67,0,.10);
+            color: #64748B;
+            background: #F7F9FC;
             font-size: 11px;
             line-height: 1.55;
         }
 
-        .modal-note strong { color: #302900; }
+        .modal-note strong { color: #243B53; }
 
         .modal-button {
             width: 100%;
             height: 48px;
             border: 0;
             border-radius: 10px;
-            background: var(--black);
-            color: #050505;
+            background: #0B1F3A;
+            color: #FFFFFF;
             font-weight: 700;
             cursor: pointer;
             margin-top: 4px;
         }
 
-        .modal-button:hover { background: var(--gold-light); }
+        .modal-button:hover { background: #D4AF37; }
         .modal-button:disabled { opacity: .6; cursor: not-allowed; }
 
         .modal-secondary {
             width: 100%;
             height: 44px;
-            border: 1px solid rgba(92,67,0,.25);
+            border: 1px solid rgba(11,31,58,.12);
             border-radius: 10px;
             background: transparent;
-            color: #4E4318;
+            color: #64748B;
             font-weight: 600;
             cursor: pointer;
             margin-top: 9px;
         }
 
-        .modal-secondary:hover { color: var(--black); background: rgba(80,60,0,.12); }
+        .modal-secondary:hover { color: #fff; background: #F4F7FB; }
 
         .modal-status {
             display: none;
@@ -487,7 +482,7 @@
         .password-rules {
             margin-top: -10px;
             margin-bottom: 16px;
-            color: #6B5D28;
+            color: #64748B;
             font-size: 10px;
             line-height: 1.5;
         }
@@ -522,12 +517,12 @@
         <section class="login-card">
 
             <div class="logo-wrapper">
-                <img src="logo.png" alt="Haris Institute" class="logo">
+                <img src="logo.png" alt="HARIS INSTITUTE" class="logo">
             </div>
 
             <header class="header">
-                <h1>Welcome to Haris Institute</h1>
-                <p>Sign in to access the Haris Institute management system.</p>
+                <h1>Welcome to HARIS INSTITUTE</h1>
+                <p>Sign in to access the HARIS INSTITUTE management system.</p>
             </header>
 
             <form id="login-form">
@@ -566,7 +561,7 @@
             </form>
 
             <footer class="footer">
-                <p>© 2026 <strong>HARIS_INSTITUTE</strong> · Secure Management System</p>
+                <p>© 2026 <strong>HARIS INSTITUTE</strong> · Secure Management System</p>
             </footer>
         </section>
     </div>
@@ -579,7 +574,7 @@
         <div class="modal-header">
             <div>
                 <h2 id="reset-title">Reset Password</h2>
-                <p>Use the permanent secret key stored in the HARIS_INSTITUTE database to authorize the password change.</p>
+                <p>Use the permanent secret key stored in the HARIS INSTITUTE database to authorize the password change.</p>
             </div>
             <button type="button" class="modal-close" id="reset-close" aria-label="Close">×</button>
         </div>
@@ -650,17 +645,17 @@
 <!-- SUCCESS SCREEN -->
 <div class="success-screen" id="success-screen">
     <div class="success-content">
-        <img src="logo.png" alt="Haris Institute" class="success-logo">
+        <img src="logo.png" alt="HARIS INSTITUTE" class="success-logo">
         <h2>Login Successful</h2>
         <div class="success-spinner"></div>
-        <p>Preparing your Haris Institute dashboard...</p>
+        <p>Preparing your HARIS INSTITUTE dashboard...</p>
     </div>
 </div>
 
 <script>
     /*
      * =========================================================
-     * HARIS_INSTITUTE LOGIN CONFIGURATION
+     * HARIS INSTITUTE LOGIN CONFIGURATION
      * =========================================================
      *
      * Your exact Flask server.
@@ -775,8 +770,8 @@
             setLoading(false);
 
         } catch (error) {
-            console.error("Haris Institute Login Error:", error);
-            showError("Unable to connect to the Haris Institute server.");
+            console.error("HARIS INSTITUTE Login Error:", error);
+            showError("Unable to connect to the HARIS INSTITUTE server.");
             setLoading(false);
         }
     });
@@ -944,9 +939,9 @@
             );
 
         } catch (error) {
-            console.error("Haris Institute Password Reset Error:", error);
+            console.error("HARIS INSTITUTE Password Reset Error:", error);
             showResetStatus(
-                "Unable to connect to the Haris Institute server.",
+                "Unable to connect to the HARIS INSTITUTE server.",
                 "error"
             );
         } finally {
