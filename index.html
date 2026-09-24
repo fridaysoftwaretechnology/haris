@@ -7,9 +7,9 @@
 
     <style>
         :root {
-            --navy: #0B1F3A;
-            --navy-soft: #12345B;
-            --navy-card: #F8FAFD;
+            --navy: #B8860B;
+            --navy-soft: #D4AF37;
+            --navy-card: #FFFDF5;
             --white: #FFFFFF;
             --white-soft: #F6F8FB;
             --gray-100: #EEF2F7;
@@ -47,7 +47,7 @@
             background:
                 radial-gradient(circle at 10% 15%, rgba(212,175,55,.16), transparent 30%),
                 radial-gradient(circle at 90% 85%, rgba(11,31,58,.12), transparent 32%),
-                #050505;
+                #8A6500;
         }
 
         .background-grid {
@@ -243,7 +243,7 @@
             margin-top: 4px;
             border: none;
             border-radius: 10px;
-            background: #173F73;
+            background: linear-gradient(135deg, #B8860B, #D4AF37);
             color: var(--navy);
             font-size: 14px;
             font-weight: 700;
@@ -432,7 +432,7 @@
             height: 48px;
             border: 0;
             border-radius: 10px;
-            background: #0B1F3A;
+            background: #B8860B;
             color: #FFFFFF;
             font-weight: 700;
             cursor: pointer;
@@ -764,7 +764,7 @@
                 return;
             }
 
-            showError(result.data || "Invalid Login Credentials");
+            showError(result.message || "Invalid Login Credentials");
             passwordInput.value = "";
             passwordInput.focus();
             setLoading(false);
@@ -894,7 +894,7 @@
              * {
              *   "username": "...",
              *   "key": "...",
-             *   "new_password": "..."
+             *   "password": "..."
              * }
              */
             const response = await fetch(`${API_URL}/haris/change-password`, {
@@ -918,7 +918,7 @@
 
             if (response.ok && result.status === true) {
                 showResetStatus(
-                    result.data || "Password changed successfully. You can now sign in.",
+                    result.message || "Password changed successfully. You can now sign in.",
                     "success"
                 );
 
@@ -934,7 +934,7 @@
             }
 
             showResetStatus(
-                result.data || "Password change was not authorized. Verify the username and secret key.",
+                result.message || "Password change was not authorized. Verify the username and secret key.",
                 "error"
             );
 
