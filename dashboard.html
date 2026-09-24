@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>HARIS INSTITUTE — Student Management System</title>
+    <title>Haris Institute — Student Management System</title>
     <style>
         :root {
-            --primary: #C89B2B;
-            --primary-hover: #A67C16;
-            --secondary: #0B1F3A;
+            --primary: #C99A00;
+            --primary-hover: #A67C00;
+            --secondary: #111827;
             --border: #e5e7eb;
             --bg: #f5f6f8;
             --card: #fff;
@@ -18,10 +18,10 @@
             --danger: #dc2626;
             --success: #059669;
             --warning: #d97706;
-            --glass: rgba(11, 31, 58, .42);
-            --shadow-sm: 0 1px 3px rgba(11, 31, 58, .08);
-            --shadow: 0 6px 18px rgba(11, 31, 58, .10);
-            --shadow-lg: 0 18px 50px rgba(11, 31, 58, .18)
+            --glass: rgba(90, 65, 0, .55);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08);
+            --shadow: 0 6px 18px rgba(0, 0, 0, .09);
+            --shadow-lg: 0 18px 50px rgba(0, 0, 0, .20)
         }
 
         * {
@@ -62,7 +62,7 @@
         header {
             height: 66px;
             min-height: 66px;
-            background: var(--secondary);
+            background: var(--primary);
             color: #fff;
             display: flex;
             align-items: center;
@@ -87,7 +87,6 @@
 
         .header-brand h3 {
             font-size: 18px;
-            color: #F3D47A;
             letter-spacing: .3px
         }
 
@@ -157,7 +156,7 @@
         .card-item {
             background: var(--card);
             border: 1px solid var(--border);
-            border-top: 4px solid #C89B2B;
+            border-top: 4px solid var(--primary);
             border-radius: 12px;
             padding: 14px 15px;
             box-shadow: var(--shadow-sm)
@@ -213,24 +212,24 @@
 
         .add-btn,
         .btn-primary {
-            background: var(--secondary);
+            background: var(--primary);
             color: #fff
         }
 
         .add-btn:hover,
         .btn-primary:hover {
-            background: #17365F
+            background: var(--primary-hover)
         }
 
         .export-btn,
         .btn-success {
-            background: #0B1F3A;
+            background: #1468c7;
             color: #fff
         }
 
         .export-btn:hover,
         .btn-success:hover {
-            background: #091A31
+            background: #1468c7
         }
 
         .btn-secondary {
@@ -295,7 +294,7 @@
         .form-group input:focus,
         .history-toolbar input:focus,
         .history-toolbar select:focus {
-            border-color: #C89B2B;
+            border-color: #777;
             box-shadow: 0 0 0 3px #0000000d
         }
 
@@ -326,7 +325,7 @@
         }
 
         thead {
-            background: var(--secondary);
+            background: var(--primary);
             color: #fff;
             position: sticky;
             top: 0;
@@ -449,7 +448,7 @@
         }
 
         .modal-header {
-            background: var(--secondary);
+            background: var(--primary);
             color: #fff;
             padding: 15px 19px;
             display: flex;
@@ -685,8 +684,8 @@
 
         .side-nav button:hover,
         .side-nav button.active {
-            background: rgba(200,155,43,.10);
-            color: #0B1F3A
+            background: #0000000d;
+            color: #000
         }
 
         .sidebar-scroll {
@@ -717,7 +716,6 @@
 
         .section-title {
             font-size: 18px;
-            color: #0B1F3A;
             font-weight: 800
         }
 
@@ -789,7 +787,7 @@
             right: 18px;
             bottom: 55px;
             z-index: 500;
-            background: #0B1F3A;
+            background: #8F6B00;
             color: #fff;
             padding: 12px 15px;
             border-radius: 9px;
@@ -824,7 +822,7 @@
         }
 
         .voucher-head {
-            background: #C89B2B;
+            background: #C99A00;
             color: #fff;
             padding: 22px 28px;
             display: flex;
@@ -985,7 +983,7 @@
         .loading-bars span {
             width: 7px;
             height: 18px;
-            background: #C89B2B;
+            background: #C99A00;
             border-radius: 3px;
             animation: loading 1s ease-in-out infinite
         }
@@ -1133,8 +1131,8 @@
         <header>
             <div class="header-brand">
                 <button class="header-btn" id="openSidebarBtn" title="Open menu">☰</button>
-                <img class="header-logo" src="logo.png" alt="HARIS INSTITUTE">
-                <h3>HARIS INSTITUTE</h3>
+                <img class="header-logo" src="logo.png" alt="Haris Institute">
+                <h3>Haris Institute</h3>
             </div>
             <div class="refresh">
                 <div class="top-info" id="liveClock">Loading...</div><button id="reloadBtn"
@@ -1223,7 +1221,7 @@
             <section class="page" id="coursesPage" style="display:none">
                 <div>
                     <div class="section-title">Course Management</div>
-                    <div class="section-subtitle">Manage courses available in the HARIS INSTITUTE enrollment form.</div>
+                    <div class="section-subtitle">Manage courses available in the Haris Institute enrollment form.</div>
                 </div>
                 <div class="toolbar-container">
                     <div class="action-group-left"><button class="add-btn" id="addCourseBtn">＋ Add Course</button></div>
@@ -1241,12 +1239,12 @@
                 <div class="settings-grid">
                     <div class="setting-card">
                         <h4>Database Backup</h4>
-                        <p>Download a complete JSON backup of the current online HARIS INSTITUTE database.</p><button
+                        <p>Download a complete JSON backup of the current online Haris Institute database.</p><button
                             class="btn-primary" id="backupBtn">⬇ Backup Database</button>
                     </div>
                     <div class="setting-card">
                         <h4>Restore Database</h4>
-                        <p>Restore a previously exported HARIS INSTITUTE JSON backup and upload it to the online server.</p>
+                        <p>Restore a previously exported Haris Institute JSON backup and upload it to the online server.</p>
                         <button class="btn-secondary" id="restoreBtn">⬆ Restore Backup</button><input type="file"
                             id="restoreFile" accept=".json" hidden>
                     </div>
@@ -1262,7 +1260,7 @@
                     </div>
                     <div class="setting-card">
                         <h4>Online Database</h4>
-                        <p>All reads and writes use the HARIS INSTITUTE Flask API. No browser localStorage database or sync mode
+                        <p>All reads and writes use the Haris Institute Flask API. No browser localStorage database or sync mode
                             is used.</p><button class="btn-secondary" id="reloadOnlineBtn">↻ Reload Online Data</button>
                     </div>
                     <div class="setting-card">
@@ -1281,14 +1279,14 @@
                     </div>
                     <div class="setting-card">
                         <h4>Danger Zone</h4>
-                        <p>Replace the online database with an empty HARIS INSTITUTE database. This cannot be undone unless you
+                        <p>Replace the online database with an empty Haris Institute database. This cannot be undone unless you
                             have a backup.</p><button class="btn-danger" id="resetDbBtn">Reset Online Database</button>
                     </div>
                 </div>
             </section>
         </main>
 
-        <footer><span class="footer-dev">HARIS INSTITUTE Student Management System</span><span>© 2026 <strong>HARIS INSTITUTE</strong> —
+        <footer><span class="footer-dev">Haris Institute Student Management System</span><span>© 2026 <strong>Haris Institute</strong> —
                 All Rights Reserved.</span></footer>
     </div>
 
@@ -1297,9 +1295,9 @@
             <div class="sidebar-top"><strong>Navigation</strong><button class="sidebar-close"
                     id="closeSidebarBtn">✕</button></div>
             <div class="sidebar-brand">
-                <div class="sidebar-logo"><img src="logo.png" alt="HARIS INSTITUTE"></div>
+                <div class="sidebar-logo"><img src="logo.png" alt="Haris Institute"></div>
                 <div>
-                    <h3>HARIS INSTITUTE</h3><span>Student Management System</span>
+                    <h3>Haris Institute</h3><span>Student Management System</span>
                 </div>
             </div>
             <div class="sidebar-scroll">
@@ -1684,17 +1682,17 @@
         "use strict";
 
         /* =========================================================
-           HARIS INSTITUTE ONLINE DATABASE
+           Haris Institute ONLINE DATABASE
            Flask API:
            GET  https://fridaysoftwaretechnology.pythonanywhere.com/haris/read
            POST https://fridaysoftwaretechnology.pythonanywhere.com/haris/save
-           HARIS INSTITUTE uses the Flask online database for all persistent data.
+           Haris Institute uses the Flask online database for all persistent data.
         ========================================================= */
-        const API_BASE = window.HARIS INSTITUTE_API_BASE || "https://fridaysoftwaretechnology.pythonanywhere.com";
+        const API_BASE = window.HARIS_API_BASE || "https://fridaysoftwaretechnology.pythonanywhere.com";
         const READ_URL = API_BASE + "/haris/read";
         const SAVE_URL = API_BASE + "/haris/save";
 
-        const DEFAULT_DB = { auth: { username: "admin", password: "password" }, theme: "#C89B2B", students: [], courses: [], payments: [], history: [], expenses: [] };
+        const DEFAULT_DB = { auth: { username: "admin", password: "password" }, theme: "#C99A00", students: [], courses: [], payments: [], history: [], expenses: [] };
         let database = structuredClone(DEFAULT_DB);
         let loadingDepth = 0;
         let voucherStudentIndex = -1;
@@ -1713,7 +1711,7 @@
             database.auth.password = String(database.auth.password || "haris");
             /* The permanent server-side key is never included in the browser database. */
             if (Object.prototype.hasOwnProperty.call(database.auth, "key")) delete database.auth.key;
-            database.theme = "#C89B2B";
+            database.theme = "#C99A00";
             database.students = Array.isArray(database.students) ? database.students : [];
             database.courses = Array.isArray(database.courses) ? database.courses : [];
             database.payments = Array.isArray(database.payments) ? database.payments : [];
@@ -1771,7 +1769,7 @@
                     headers: { "Accept": "application/json" }
                 });
             } catch (networkError) {
-                throw new Error("Cannot connect to the HARIS INSTITUTE server. Check the API URL, internet connection, and backend status.");
+                throw new Error("Cannot connect to the Haris Institute server. Check the API URL, internet connection, and backend status.");
             }
 
             const { result, text } = await readJsonResponse(response);
@@ -1781,11 +1779,11 @@
                 throw new Error(`Server returned HTTP ${response.status}${serverMessage ? ": " + serverMessage : "."}`);
             }
 
-            if (!result || result.status !== true || !result.data || typeof result.data !== "object") {
-                throw new Error("The server returned an invalid HARIS INSTITUTE database response.");
+            if (!result || result.status !== true || !result.message || typeof result.message !== "object") {
+                throw new Error("The server returned an invalid Haris Institute database response.");
             }
 
-            database = result.data;
+            database = result.message;
             normalizeDatabase();
             return database;
         }
@@ -1804,7 +1802,7 @@
                     body: JSON.stringify(database)
                 });
             } catch (networkError) {
-                throw new Error("Cannot connect to the HARIS INSTITUTE server while saving. Check the API URL and backend status.");
+                throw new Error("Cannot connect to the Haris Institute server while saving. Check the API URL and backend status.");
             }
 
             const { result, text } = await readJsonResponse(response);
@@ -1820,10 +1818,10 @@
 
             return result;
         }
-        async function refreshFromServer(message = "Loading HARIS INSTITUTE online database...") {
+        async function refreshFromServer(message = "Loading Haris Institute online database...") {
             showLoading(message);
             try { await readOnlineDatabase(); applyTheme(); refreshUI(); toast("Online database loaded."); }
-            catch (e) { console.error(e); alert("Could not load the HARIS INSTITUTE online database.\n\n" + e.message); }
+            catch (e) { console.error(e); alert("Could not load the Haris Institute online database.\n\n" + e.message); }
             finally { hideLoading(); }
         }
         async function commit(message, successMessage, after) {
@@ -1833,7 +1831,7 @@
             finally { hideLoading(); }
         }
 
-        function applyTheme() { document.documentElement.style.setProperty("--primary", "#C89B2B"); document.documentElement.style.setProperty("--primary-hover", "#222") }
+        function applyTheme() { document.documentElement.style.setProperty("--primary", "#C99A00"); document.documentElement.style.setProperty("--primary-hover", "#A67C00") }
         function startClock() { const tick = () => { $("liveClock").textContent = new Date().toLocaleString("en-PK", { weekday: "short", year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit" }) }; tick(); setInterval(tick, 1000) }
         function toast(message) { const t = $("toast"); t.textContent = message; t.style.display = "block"; clearTimeout(window.__toast); window.__toast = setTimeout(() => t.style.display = "none", 2800) }
         function showLoading(message = "Processing...") { loadingDepth++; $("loadingMessage").textContent = message; $("loadingOverlay").classList.add("active") }
@@ -2116,7 +2114,7 @@
 
         function expenseReportLines(records) {
             const lines = [
-                "HARIS INSTITUTE - EXPENSE REPORT",
+                "Haris Institute - EXPENSE REPORT",
                 "Official Expense Management Report",
                 `Generated: ${new Date().toLocaleString("en-PK")}`,
                 "",
@@ -2154,10 +2152,10 @@
 
             showLoading("Generating expense report PDF...");
             try {
-                const blob = makeSimplePDF("HARIS INSTITUTE Expense Report", expenseReportLines(records));
+                const blob = makeSimplePDF("Haris Institute Expense Report", expenseReportLines(records));
                 const result = await downloadBlob(
                     blob,
-                    `HARIS INSTITUTE_Expense_Report_${today()}.pdf`
+                    `Haris Institute_Expense_Report_${today()}.pdf`
                 );
                 if (result) toast("Expense report PDF exported.");
             } catch (err) {
@@ -2193,7 +2191,7 @@
                 const csv = rows.map(row => row.map(csvEscape).join(",")).join("\n");
                 const result = await downloadBlob(
                     new Blob(["\ufeff" + csv], { type: "text/csv;charset=utf-8" }),
-                    `HARIS INSTITUTE_Expense_Report_${today()}.csv`
+                    `Haris Institute_Expense_Report_${today()}.csv`
                 );
 
                 if (result) toast("Expense report CSV exported.");
@@ -2235,7 +2233,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>HARIS INSTITUTE Expense Report</title>
+<title>Haris Institute Expense Report</title>
 <style>
 @page { size: A4 landscape; margin: 14mm; }
 body { font-family: Arial, sans-serif; color:#111827; margin:0; }
@@ -2246,13 +2244,13 @@ h1 { margin:0 0 5px; font-size:25px; }
 .box small { display:block; color:#667085; font-size:10px; text-transform:uppercase; }
 .box strong { display:block; margin-top:4px; font-size:16px; }
 table { width:100%; border-collapse:collapse; }
-th { background:#C89B2B; color:#fff; text-align:left; font-size:10px; padding:9px; }
+th { background:#C99A00; color:#fff; text-align:left; font-size:10px; padding:9px; }
 td { border:1px solid #d0d5dd; padding:8px; font-size:10px; vertical-align:top; }
 tfoot td { font-weight:700; background:#f2f4f7; }
 </style>
 </head>
 <body>
-<h1>HARIS INSTITUTE — Expense Report</h1>
+<h1>Haris Institute — Expense Report</h1>
 <div class="sub">Generated ${safe(new Date().toLocaleString("en-PK"))}</div>
 <div class="summary">
     <div class="box"><small>Expenses</small><strong>${records.length}</strong></div>
@@ -2277,31 +2275,31 @@ tfoot td { font-weight:700; background:#f2f4f7; }
         function voucherData(s) { const fee = Number(s.fee) || 0, received = studentReceived(s.id), balance = Math.max(0, fee - received); return { fee, received, balance, receipt: s.receipt || ("AUTO-" + String(Date.now()).slice(-6)) } }
         function renderVoucherPreview(index) {
             const s = database.students[index]; if (!s) return; voucherStudentIndex = index; const d = voucherData(s);
-            $("voucherPreview").innerHTML = `<div class="voucher-head"><div><img class="voucher-brand-logo" src="logo.png" alt="HARIS INSTITUTE"><h1>HARIS INSTITUTE</h1><p>OFFICIAL FEE VOUCHER</p></div><div class="voucher-meta"><div><strong>Receipt:</strong> ${safe("#" + d.receipt)}</div><div><strong>Date:</strong> ${safe(s.date || today())}</div></div></div><div class="voucher-body"><div class="voucher-title">STUDENT DETAILS</div><div class="voucher-details"><div class="voucher-detail"><small>Student Name</small><strong>${safe(s.name)}</strong></div><div class="voucher-detail"><small>Father's Name</small><strong>${safe(s.fatherName)}</strong></div><div class="voucher-detail"><small>Course</small><strong>${safe(s.course)}</strong></div><div class="voucher-detail"><small>Phone Number</small><strong>${safe(s.phone)}</strong></div><div class="voucher-detail"><small>Address</small><strong>${safe(s.address || "—")}</strong></div></div><div class="voucher-totals"><div class="voucher-total"><small>TOTAL COURSE FEE</small><strong>${money(d.fee)}</strong></div><div class="voucher-total"><small>TOTAL RECEIVED</small><strong>${money(d.received)}</strong></div><div class="voucher-total"><small>OUTSTANDING</small><strong>${money(d.balance)}</strong></div></div><div class="voucher-foot"><div class="signature">Student Signature</div><div class="signature">Authorized Signature / Stamp</div></div></div>`;
+            $("voucherPreview").innerHTML = `<div class="voucher-head"><div><img class="voucher-brand-logo" src="logo.png" alt="Haris Institute"><h1>Haris Institute</h1><p>OFFICIAL FEE VOUCHER</p></div><div class="voucher-meta"><div><strong>Receipt:</strong> ${safe("#" + d.receipt)}</div><div><strong>Date:</strong> ${safe(s.date || today())}</div></div></div><div class="voucher-body"><div class="voucher-title">STUDENT DETAILS</div><div class="voucher-details"><div class="voucher-detail"><small>Student Name</small><strong>${safe(s.name)}</strong></div><div class="voucher-detail"><small>Father's Name</small><strong>${safe(s.fatherName)}</strong></div><div class="voucher-detail"><small>Course</small><strong>${safe(s.course)}</strong></div><div class="voucher-detail"><small>Phone Number</small><strong>${safe(s.phone)}</strong></div><div class="voucher-detail"><small>Address</small><strong>${safe(s.address || "—")}</strong></div></div><div class="voucher-totals"><div class="voucher-total"><small>TOTAL COURSE FEE</small><strong>${money(d.fee)}</strong></div><div class="voucher-total"><small>TOTAL RECEIVED</small><strong>${money(d.received)}</strong></div><div class="voucher-total"><small>OUTSTANDING</small><strong>${money(d.balance)}</strong></div></div><div class="voucher-foot"><div class="signature">Student Signature</div><div class="signature">Authorized Signature / Stamp</div></div></div>`;
             $("voucherModal").style.display = "flex";
         }
         function exportFeeVoucher(index) { renderVoucherPreview(index) }
         function wrapText(ctx, text, maxWidth) { const words = String(text || "").split(" "), lines = []; let line = ""; for (const word of words) { const t = line ? line + " " + word : word; if (ctx.measureText(t).width > maxWidth && line) { lines.push(line); line = word } else line = t } if (line) lines.push(line); return lines }
         function drawFeeVoucher(s) {
             const d = voucherData(s), c = $("exportCanvas"), ctx = c.getContext("2d"), W = 1200, H = 760; c.width = W; c.height = H; ctx.clearRect(0, 0, W, H); ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H);
-            ctx.strokeStyle = "#C89B2B"; ctx.lineWidth = 8; ctx.strokeRect(4, 4, W - 8, H - 8); ctx.fillStyle = "#C89B2B"; ctx.fillRect(8, 8, W - 16, 150);
-            ctx.fillStyle = "#fff"; ctx.font = "bold 40px Arial"; ctx.fillText("HARIS INSTITUTE", 42, 62); ctx.font = "18px Arial"; ctx.fillText("OFFICIAL FEE VOUCHER", 42, 94); ctx.font = "bold 18px Arial"; ctx.fillText("Receipt: #" + d.receipt, 870, 58); ctx.font = "16px Arial"; ctx.fillText("Date: " + (s.date || today()), 870, 91);
+            ctx.strokeStyle = "#C99A00"; ctx.lineWidth = 8; ctx.strokeRect(4, 4, W - 8, H - 8); ctx.fillStyle = "#C99A00"; ctx.fillRect(8, 8, W - 16, 150);
+            ctx.fillStyle = "#fff"; ctx.font = "bold 40px Arial"; ctx.fillText("Haris Institute", 42, 62); ctx.font = "18px Arial"; ctx.fillText("OFFICIAL FEE VOUCHER", 42, 94); ctx.font = "bold 18px Arial"; ctx.fillText("Receipt: #" + d.receipt, 870, 58); ctx.font = "16px Arial"; ctx.fillText("Date: " + (s.date || today()), 870, 91);
             ctx.fillStyle = "#111827"; ctx.font = "bold 22px Arial"; ctx.fillText("STUDENT DETAILS", 48, 195); ctx.strokeStyle = "#d0d5dd"; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(48, 211); ctx.lineTo(1152, 211); ctx.stroke();
             [["STUDENT NAME", s.name], ["FATHER'S NAME", s.fatherName], ["COURSE", s.course], ["PHONE NUMBER", s.phone], ["ADDRESS", s.address || "—"]].forEach((f, i) => { const col = i % 2, row = Math.floor(i / 2), x = 48 + col * 552, y = 230 + row * 76; ctx.fillStyle = "#667085"; ctx.font = "bold 13px Arial"; ctx.fillText(f[0], x + 16, y + 22); ctx.fillStyle = "#111827"; ctx.font = "bold 19px Arial"; wrapText(ctx, f[1], 500).slice(0, 2).forEach((line, n) => ctx.fillText(line, x + 16, y + 50 + n * 22)); ctx.strokeStyle = "#eaecf0"; ctx.strokeRect(x, y, 536, 65) });
             const boxY = 410, boxW = 350;[["TOTAL COURSE FEE", d.fee, "#111827"], ["TOTAL RECEIVED", d.received, "#111827"], ["OUTSTANDING", d.balance, d.balance > 0 ? "#dc2626" : "#059669"]].forEach((it, i) => { const x = 48 + i * 368; ctx.fillStyle = "#f8fafc"; ctx.fillRect(x, boxY, boxW, 115); ctx.strokeStyle = "#d0d5dd"; ctx.strokeRect(x, boxY, boxW, 115); ctx.fillStyle = "#667085"; ctx.font = "bold 13px Arial"; ctx.fillText(it[0], x + 20, boxY + 32); ctx.fillStyle = it[2]; ctx.font = "bold 28px Arial"; ctx.fillText(money(it[1]), x + 20, boxY + 76) });
-            ctx.fillStyle = "#667085"; ctx.font = "13px Arial"; ctx.fillText("This voucher is issued by HARIS INSTITUTE as an official fee record.", 48, 585); ctx.strokeStyle = "#98a2b3"; ctx.beginPath(); ctx.moveTo(80, 675); ctx.lineTo(330, 675); ctx.moveTo(850, 675); ctx.lineTo(1120, 675); ctx.stroke(); ctx.fillText("Student Signature", 145, 698); ctx.fillText("Authorized Signature / Stamp", 895, 698);
+            ctx.fillStyle = "#667085"; ctx.font = "13px Arial"; ctx.fillText("This voucher is issued by Haris Institute as an official fee record.", 48, 585); ctx.strokeStyle = "#98a2b3"; ctx.beginPath(); ctx.moveTo(80, 675); ctx.lineTo(330, 675); ctx.moveTo(850, 675); ctx.lineTo(1120, 675); ctx.stroke(); ctx.fillText("Student Signature", 145, 698); ctx.fillText("Authorized Signature / Stamp", 895, 698);
             return c.toDataURL("image/png")
         }
-        async function exportCurrentVoucher() { const s = database.students[voucherStudentIndex]; if (!s) return; showLoading("Preparing fee voucher PNG..."); try { const path = await downloadDataUrl(drawFeeVoucher(s), `HARIS INSTITUTE_Fee_Voucher_${safeFilename(s.name)}.png`); if (path) { $("voucherModal").style.display = "none"; voucherStudentIndex = -1; toast("Fee voucher exported successfully.") } } catch (e) { alert("Voucher export failed: " + e.message) } finally { hideLoading() } }
+        async function exportCurrentVoucher() { const s = database.students[voucherStudentIndex]; if (!s) return; showLoading("Preparing fee voucher PNG..."); try { const path = await downloadDataUrl(drawFeeVoucher(s), `Haris Institute_Fee_Voucher_${safeFilename(s.name)}.png`); if (path) { $("voucherModal").style.display = "none"; voucherStudentIndex = -1; toast("Fee voucher exported successfully.") } } catch (e) { alert("Voucher export failed: " + e.message) } finally { hideLoading() } }
 
         function safeFilename(s) { return String(s || "Student").replace(/[^a-z0-9]+/gi, "_").replace(/^_+|_+$/g, "") || "Student" }
         function getStatementRecords() { const p = $("exportPeriod").value; if (p === "all") return { records: [...database.payments], label: "All Payment Records" }; if (p === "daily") { const d = $("exportDate").value; if (!d) throw Error("Please select a date."); return { records: database.payments.filter(x => x.date === d), label: "Daily Statement - " + d } } if (p === "monthly") { const m = $("exportMonth").value; if (!m) throw Error("Please select a month."); return { records: database.payments.filter(x => x.date?.startsWith(m)), label: "Monthly Statement - " + m } } const y = $("exportYear").value; if (!y) throw Error("Please select a year."); return { records: database.payments.filter(x => x.date?.startsWith(String(y))), label: "Yearly Statement - " + y } }
         function generateStatementPNG(records, label) {
-            const c = $("exportCanvas"), ctx = c.getContext("2d"), rowH = 34, W = 1050, H = Math.max(480, 190 + records.length * rowH); c.width = W; c.height = H; ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H); ctx.fillStyle = "#C89B2B"; ctx.fillRect(0, 0, W, 82); ctx.fillStyle = "#fff"; ctx.font = "bold 25px Arial"; ctx.fillText("HARIS INSTITUTE", 25, 36); ctx.font = "13px Arial"; ctx.fillText(label, 25, 61);
+            const c = $("exportCanvas"), ctx = c.getContext("2d"), rowH = 34, W = 1050, H = Math.max(480, 190 + records.length * rowH); c.width = W; c.height = H; ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H); ctx.fillStyle = "#C99A00"; ctx.fillRect(0, 0, W, 82); ctx.fillStyle = "#fff"; ctx.font = "bold 25px Arial"; ctx.fillText("Haris Institute", 25, 36); ctx.font = "13px Arial"; ctx.fillText(label, 25, 61);
             const y0 = 110; ctx.fillStyle = "#f2f4f7"; ctx.fillRect(20, y0, W - 40, 38); ctx.fillStyle = "#111827"; ctx.font = "bold 11px Arial";["DATE", "STUDENT", "COURSE", "AMOUNT", "METHOD", "RECEIPT"].forEach((x, i) => ctx.fillText(x, [30, 140, 385, 650, 770, 900][i], y0 + 24));
             let y = y0 + 68, total = 0; ctx.font = "12px Arial"; records.forEach(p => { total += Number(p.amount) || 0; ctx.fillStyle = "#344054"; ctx.fillText(p.date || "", 30, y); ctx.fillText(paymentStudentName(p).slice(0, 30), 140, y); ctx.fillText(paymentCourse(p).slice(0, 28), 385, y); ctx.fillText(money(p.amount), 650, y); ctx.fillText((p.method || "").slice(0, 16), 770, y); ctx.fillText((p.receipt || "—").slice(0, 15), 900, y); ctx.strokeStyle = "#eaecf0"; ctx.beginPath(); ctx.moveTo(20, y + 10); ctx.lineTo(W - 20, y + 10); ctx.stroke(); y += rowH });
             ctx.fillStyle = "#f8fafc"; ctx.fillRect(20, y, W - 40, 48); ctx.strokeStyle = "#d0d5dd"; ctx.strokeRect(20, y, W - 40, 48); ctx.fillStyle = "#111827"; ctx.font = "bold 14px Arial"; ctx.fillText(`Transactions: ${records.length}`, 35, y + 30); ctx.fillText(`Total Received: ${money(total)}`, 300, y + 30);
-            return downloadDataUrl(c.toDataURL("image/png"), `HARIS INSTITUTE_Payment_Statement_${Date.now()}.png`)
+            return downloadDataUrl(c.toDataURL("image/png"), `Haris Institute_Payment_Statement_${Date.now()}.png`)
         }
         function pdfEscape(s) { return String(s ?? "").replace(/\\/g, "\\\\").replace(/\(/g, "\\(").replace(/\)/g, "\\)").replace(/[^\x20-\x7E]/g, "?") }
         function makeSimplePDF(title, lines) {
@@ -2315,44 +2313,29 @@ tfoot td { font-weight:700; background:#f2f4f7; }
         async function downloadBlob(blob, name) {
             const safeName = String(name || "export").replace(/[\\/:*?"<>|]/g, "_");
             try {
-                /* Packaged pywebview: use the native Save As dialog when available. */
-                if (window.pywebview && window.pywebview.api && typeof window.pywebview.api.save_file === "function") {
-                    const buffer = await blob.arrayBuffer();
-                    const bytes = new Uint8Array(buffer);
-                    let binary = "";
-                    const chunk = 0x8000;
-                    for (let i = 0; i < bytes.length; i += chunk) {
-                        binary += String.fromCharCode(...bytes.subarray(i, Math.min(i + chunk, bytes.length)));
-                    }
-                    const mime = blob.type || "application/octet-stream";
-                    const result = await window.pywebview.api.save_file(btoa(binary), safeName, mime);
-                    if (result && result.ok) return result.name || safeName;
-                    if (result && result.cancelled) return null;
-                    if (result && result.error) throw new Error(result.error);
-                }
                 if (typeof window.showSaveFilePicker === "function") { const ext = safeName.toLowerCase().match(/\.(pdf|png|csv|json)$/)?.[1] || "", types = ext === "pdf" ? [{ description: "PDF Document", accept: { "application/pdf": [".pdf"] } }] : ext === "png" ? [{ description: "PNG Image", accept: { "image/png": [".png"] } }] : ext === "csv" ? [{ description: "CSV File", accept: { "text/csv": [".csv"] } }] : ext === "json" ? [{ description: "JSON File", accept: { "application/json": [".json"] } }] : []; const h = await window.showSaveFilePicker({ suggestedName: safeName, ...(types.length ? { types } : {}) }); const w = await h.createWritable(); await w.write(blob); await w.close(); return h.name || safeName }
                 const url = URL.createObjectURL(blob), a = document.createElement("a"); a.href = url; a.download = safeName; a.style.display = "none"; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 1500); return safeName
             } catch (e) { if (e.name === "AbortError" || e.name === "NotAllowedError") return null; throw e }
         }
-        function exportPaymentsPDF(records, label) { const lines = [`HARIS INSTITUTE - ${label}`, "Official Payment History Report", "", "Date | Student | Course | Amount | Method | Receipt", "--------------------------------------------------------------------------------"]; let total = 0; records.forEach(p => { total += Number(p.amount) || 0; lines.push(`${p.date || ""} | ${paymentStudentName(p).slice(0, 24)} | ${paymentCourse(p).slice(0, 20)} | ${money(p.amount)} | ${(p.method || "").slice(0, 12)} | ${(p.receipt || "-").slice(0, 12)}`) }); lines.push("", `Transactions: ${records.length}    Total Received: ${money(total)}`); return downloadBlob(makeSimplePDF(label, lines), `HARIS INSTITUTE_Payment_Statement_${Date.now()}.pdf`) }
+        function exportPaymentsPDF(records, label) { const lines = [`Haris Institute - ${label}`, "Official Payment History Report", "", "Date | Student | Course | Amount | Method | Receipt", "--------------------------------------------------------------------------------"]; let total = 0; records.forEach(p => { total += Number(p.amount) || 0; lines.push(`${p.date || ""} | ${paymentStudentName(p).slice(0, 24)} | ${paymentCourse(p).slice(0, 20)} | ${money(p.amount)} | ${(p.method || "").slice(0, 12)} | ${(p.receipt || "-").slice(0, 12)}`) }); lines.push("", `Transactions: ${records.length}    Total Received: ${money(total)}`); return downloadBlob(makeSimplePDF(label, lines), `Haris Institute_Payment_Statement_${Date.now()}.pdf`) }
         async function generateStatement() { try { const { records, label } = getStatementRecords(), format = $("statementFormat").value; showLoading("Generating statement..."); const path = format === "png" ? await generateStatementPNG(records, label) : await exportPaymentsPDF(records, label); if (path) { $("exportModal").style.display = "none"; toast("Statement exported successfully.") } } catch (e) { alert("Export failed: " + e.message) } finally { hideLoading() } }
         async function exportHistoryPDF() { showLoading("Generating payment history PDF..."); try { const p = await exportPaymentsPDF(filteredPayments(), "Filtered Payment History"); if (p) toast("Payment history PDF exported.") } catch (e) { alert(e.message) } finally { hideLoading() } }
-        async function exportHistoryCSV() { showLoading("Generating payment history CSV..."); try { const rows = [["Date", "Student", "Course", "Amount", "Method", "Receipt", "Note"], ...filteredPayments().map(p => [p.date, paymentStudentName(p), paymentCourse(p), p.amount, p.method, p.receipt, p.note])]; const csv = rows.map(r => r.map(v => `"${String(v ?? "").replace(/"/g, '""')}"`).join(",")).join("\n"); const p = await downloadBlob(new Blob([csv], { type: "text/csv;charset=utf-8" }), `HARIS INSTITUTE_Payment_History_${Date.now()}.csv`); if (p) toast("Payment history CSV exported.") } catch (e) { alert(e.message) } finally { hideLoading() } }
+        async function exportHistoryCSV() { showLoading("Generating payment history CSV..."); try { const rows = [["Date", "Student", "Course", "Amount", "Method", "Receipt", "Note"], ...filteredPayments().map(p => [p.date, paymentStudentName(p), paymentCourse(p), p.amount, p.method, p.receipt, p.note])]; const csv = rows.map(r => r.map(v => `"${String(v ?? "").replace(/"/g, '""')}"`).join(",")).join("\n"); const p = await downloadBlob(new Blob([csv], { type: "text/csv;charset=utf-8" }), `Haris Institute_Payment_History_${Date.now()}.csv`); if (p) toast("Payment history CSV exported.") } catch (e) { alert(e.message) } finally { hideLoading() } }
 
-        async function backupDatabase() { showLoading("Creating database backup..."); try { const p = await downloadBlob(new Blob([JSON.stringify(database, null, 2)], { type: "application/json" }), `HARIS INSTITUTE_Backup_${today()}.json`); if (p) toast("Database backup exported successfully.") } catch (e) { alert("Backup failed: " + e.message) } finally { hideLoading() } }
+        async function backupDatabase() { showLoading("Creating database backup..."); try { const p = await downloadBlob(new Blob([JSON.stringify(database, null, 2)], { type: "application/json" }), `Haris Institute_Backup_${today()}.json`); if (p) toast("Database backup exported successfully.") } catch (e) { alert("Backup failed: " + e.message) } finally { hideLoading() } }
         function restoreDatabase(file) {
             showLoading("Reading database backup...");
             const reader = new FileReader();
-            reader.onload = async () => { try { const imported = JSON.parse(reader.result); if (!imported || !Array.isArray(imported.students)) throw Error("Invalid HARIS INSTITUTE backup."); database = imported; normalizeDatabase(); await saveOnlineDatabase(); applyTheme(); refreshUI(); toast("Backup restored to the online database.") } catch (e) { alert("Restore failed: " + e.message) } finally { hideLoading(); $("restoreFile").value = "" } };
+            reader.onload = async () => { try { const imported = JSON.parse(reader.result); if (!imported || !Array.isArray(imported.students)) throw Error("Invalid Haris Institute backup."); database = imported; normalizeDatabase(); await saveOnlineDatabase(); applyTheme(); refreshUI(); toast("Backup restored to the online database.") } catch (e) { alert("Restore failed: " + e.message) } finally { hideLoading(); $("restoreFile").value = "" } };
             reader.onerror = () => { hideLoading(); alert("Could not read the backup file.") }; reader.readAsText(file)
         }
         function csvEscape(v) { return `"${String(v ?? "").replace(/"/g, '""')}"` }
-        async function exportStudentsCSV() { const rows = [["ID", "Name", "Father's Name", "Phone", "Address", "Course", "Total Fee", "Received", "Balance", "Status", "Enrollment Date", "Receipt"], ...database.students.map(s => [s.id, s.name, s.fatherName, s.phone, s.address, s.course, s.fee, studentReceived(s.id), getBalance(s), s.status, s.date, s.receipt])]; const csv = rows.map(r => r.map(csvEscape).join(",")).join("\n"); const p = await downloadBlob(new Blob([csv], { type: "text/csv;charset=utf-8" }), `HARIS INSTITUTE_Students_${today()}.csv`); if (p) toast("Students CSV exported.") }
-        async function exportPaymentsCSV() { const rows = [["ID", "Date", "Student", "Course", "Amount", "Method", "Receipt", "Note"], ...database.payments.map(p => [p.id, p.date, paymentStudentName(p), paymentCourse(p), p.amount, p.method, p.receipt, p.note])]; const csv = rows.map(r => r.map(csvEscape).join(",")).join("\n"); const p = await downloadBlob(new Blob([csv], { type: "text/csv;charset=utf-8" }), `HARIS INSTITUTE_Payments_${today()}.csv`); if (p) toast("Payments CSV exported.") }
-        async function exportJSON() { const p = await downloadBlob(new Blob([JSON.stringify(database, null, 2)], { type: "application/json" }), `HARIS INSTITUTE_Database_${today()}.json`); if (p) toast("JSON exported.") }
+        async function exportStudentsCSV() { const rows = [["ID", "Name", "Father's Name", "Phone", "Address", "Course", "Total Fee", "Received", "Balance", "Status", "Enrollment Date", "Receipt"], ...database.students.map(s => [s.id, s.name, s.fatherName, s.phone, s.address, s.course, s.fee, studentReceived(s.id), getBalance(s), s.status, s.date, s.receipt])]; const csv = rows.map(r => r.map(csvEscape).join(",")).join("\n"); const p = await downloadBlob(new Blob([csv], { type: "text/csv;charset=utf-8" }), `Haris Institute_Students_${today()}.csv`); if (p) toast("Students CSV exported.") }
+        async function exportPaymentsCSV() { const rows = [["ID", "Date", "Student", "Course", "Amount", "Method", "Receipt", "Note"], ...database.payments.map(p => [p.id, p.date, paymentStudentName(p), paymentCourse(p), p.amount, p.method, p.receipt, p.note])]; const csv = rows.map(r => r.map(csvEscape).join(",")).join("\n"); const p = await downloadBlob(new Blob([csv], { type: "text/csv;charset=utf-8" }), `Haris Institute_Payments_${today()}.csv`); if (p) toast("Payments CSV exported.") }
+        async function exportJSON() { const p = await downloadBlob(new Blob([JSON.stringify(database, null, 2)], { type: "application/json" }), `Haris Institute_Database_${today()}.json`); if (p) toast("JSON exported.") }
         function printDashboard() {
             showLoading("Preparing dashboard for printing...");
-            setTimeout(() => { try { const rows = database.students.map(s => `<tr><td>${safe(s.name)}</td><td>${safe(s.fatherName)}</td><td>${safe(s.course)}</td><td>${safe(s.phone)}</td><td>${safe(s.address || "—")}</td><td>${money(s.fee)}</td><td>${money(studentReceived(s.id))}</td><td>${money(getBalance(s))}</td><td>${safe(s.status)}</td></tr>`).join(""), w = window.open("", "_blank", "width=1100,height=800"); if (!w) { alert("Please allow pop-ups for printing."); return } w.document.write(`<!doctype html><html><head><title>HARIS INSTITUTE Report</title><style>body{font-family:Arial;padding:30px;color:#111}h1{margin-bottom:4px}p{color:#667085}table{width:100%;border-collapse:collapse;margin-top:25px}th{background:#C89B2B;color:white}th,td{padding:8px;border:1px solid #ddd;text-align:left;font-size:11px}</style></head><body><h1>HARIS INSTITUTE</h1><p>Student Management Report — ${today()}</p><table><thead><tr><th>Name</th><th>Father</th><th>Course</th><th>Phone</th><th>Address</th><th>Fee</th><th>Received</th><th>Balance</th><th>Status</th></tr></thead><tbody>${rows}</tbody></table><script>window.onload=()=>setTimeout(()=>window.print(),300)<\\/script></body></html>`); w.document.close(); toast("Print report opened.") } finally { hideLoading() } }, 120)
+            setTimeout(() => { try { const rows = database.students.map(s => `<tr><td>${safe(s.name)}</td><td>${safe(s.fatherName)}</td><td>${safe(s.course)}</td><td>${safe(s.phone)}</td><td>${safe(s.address || "—")}</td><td>${money(s.fee)}</td><td>${money(studentReceived(s.id))}</td><td>${money(getBalance(s))}</td><td>${safe(s.status)}</td></tr>`).join(""), w = window.open("", "_blank", "width=1100,height=800"); if (!w) { alert("Please allow pop-ups for printing."); return } w.document.write(`<!doctype html><html><head><title>Haris Institute Report</title><style>body{font-family:Arial;padding:30px;color:#111}h1{margin-bottom:4px}p{color:#667085}table{width:100%;border-collapse:collapse;margin-top:25px}th{background:#C99A00;color:white}th,td{padding:8px;border:1px solid #ddd;text-align:left;font-size:11px}</style></head><body><h1>Haris Institute</h1><p>Student Management Report — ${today()}</p><table><thead><tr><th>Name</th><th>Father</th><th>Course</th><th>Phone</th><th>Address</th><th>Fee</th><th>Received</th><th>Balance</th><th>Status</th></tr></thead><tbody>${rows}</tbody></table><script>window.onload=()=>setTimeout(()=>window.print(),300)<\\/script></body></html>`); w.document.close(); toast("Print report opened.") } finally { hideLoading() } }, 120)
         }
         const CHANGE_PASSWORD_URL = API_BASE + "/haris/change-password";
         const RESET_URL = API_BASE + "/haris/reset";
@@ -2394,7 +2377,7 @@ tfoot td { font-weight:700; background:#f2f4f7; }
             try {
                 const response = await fetch(CHANGE_PASSWORD_URL, {
                     method: "POST", headers: {"Content-Type":"application/json","Accept":"application/json"},
-                    body: JSON.stringify({key: authKey, new_password: newPassword})
+                    body: JSON.stringify({key: authKey, password: newPassword})
                 });
                 const result = await response.json().catch(() => ({}));
                 if (!response.ok || result.status !== true) throw new Error(result.message || `Server returned HTTP ${response.status}.`);
@@ -2407,7 +2390,7 @@ tfoot td { font-weight:700; background:#f2f4f7; }
             const authKey = prompt("Enter the permanent Administration Key to authorize the online database reset:");
             if (authKey === null) return;
             if (!authKey.trim()) { alert("Administration Key is required."); return; }
-            if (!confirm("WARNING: This will permanently replace the ONLINE HARIS INSTITUTE database with an empty database.\n\nContinue only if you have a backup?")) return;
+            if (!confirm("WARNING: This will permanently replace the ONLINE Haris Institute database with an empty database.\n\nContinue only if you have a backup?")) return;
             showLoading("Authorizing and resetting online database...");
             try {
                 const response = await fetch(RESET_URL, {
@@ -2416,7 +2399,7 @@ tfoot td { font-weight:700; background:#f2f4f7; }
                 });
                 const result = await response.json().catch(() => ({}));
                 if (!response.ok || result.status !== true) throw new Error(result.message || `Server returned HTTP ${response.status}.`);
-                database = result.data && typeof result.data === "object" ? result.data : structuredClone(DEFAULT_DB);
+                database = structuredClone(DEFAULT_DB);
                 normalizeDatabase(); applyTheme(); refreshUI(); showPage("dashboardPage");
                 toast("Online database reset successfully.");
             } catch (e) { console.error(e); alert("Database reset failed.\n\n" + e.message); }
@@ -2453,8 +2436,8 @@ tfoot td { font-weight:700; background:#f2f4f7; }
             $("changePasswordBtn").onclick = openPasswordModal; $("closePasswordModalBtn").onclick = closePasswordModal; $("cancelPasswordBtn").onclick = closePasswordModal; $("passwordForm").onsubmit = changePassword; $("pnewp").oninput = updatePasswordStrength; $("resetDbBtn").onclick = resetOnlineDatabase; $("logoutBtn").onclick = logout;
             document.querySelectorAll(".modal-overlay").forEach(m => m.addEventListener("click", closeModalOnBackdrop));
             document.addEventListener("keydown", e => { if (e.key === "Escape") document.querySelectorAll(".modal-overlay").forEach(m => m.style.display = "none") });
-            showLoading("Connecting to HARIS INSTITUTE online database...");
-            try { await readOnlineDatabase(); applyTheme(); refreshUI() } catch (e) { console.error(e); database = structuredClone(DEFAULT_DB); normalizeDatabase(); refreshUI(); alert("HARIS INSTITUTE could not connect to the online database.\n\n" + e.message + "\n\nCheck that the Flask server is running and that CORS allows this page.") } finally { hideLoading() }
+            showLoading("Connecting to Haris Institute online database...");
+            try { await readOnlineDatabase(); applyTheme(); refreshUI() } catch (e) { console.error(e); database = structuredClone(DEFAULT_DB); normalizeDatabase(); refreshUI(); alert("Haris Institute could not connect to the online database.\n\n" + e.message + "\n\nCheck that the Flask server is running and that CORS allows this page.") } finally { hideLoading() }
         });
     </script>
 </body>
