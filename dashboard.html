@@ -75,7 +75,8 @@
         .header-brand {
             display: flex;
             align-items: center;
-            gap: 13px
+            gap: 13px;
+            min-width: 0
         }
 
         .header-logo {
@@ -87,7 +88,8 @@
 
         .header-brand h3 {
             font-size: 18px;
-            letter-spacing: .3px
+            letter-spacing: .3px;
+            white-space: nowrap
         }
 
         .header-btn {
@@ -97,7 +99,8 @@
             border-radius: 9px;
             background: #fff1;
             color: #fff;
-            font-size: 20px
+            font-size: 20px;
+            flex: none
         }
 
         .header-btn:hover {
@@ -148,7 +151,7 @@
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(8, minmax(120px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 13px;
             flex: none
         }
@@ -159,11 +162,12 @@
             border-top: 4px solid var(--primary);
             border-radius: 12px;
             padding: 14px 15px;
-            box-shadow: var(--shadow-sm)
+            box-shadow: var(--shadow-sm);
+            min-width: 0
         }
 
         .card-item h3 {
-            font-size: 20px;
+            font-size: clamp(15px, 1.1vw, 20px);
             margin-bottom: 5px;
             white-space: nowrap;
             overflow: hidden;
@@ -175,7 +179,10 @@
             color: var(--muted);
             text-transform: uppercase;
             font-weight: 700;
-            letter-spacing: .55px
+            letter-spacing: .55px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
         }
 
         .toolbar-container {
@@ -184,14 +191,18 @@
             justify-content: space-between;
             gap: 10px;
             flex-wrap: wrap;
-            flex: none
+            row-gap: 10px;
+            flex: none;
+            min-width: 0
         }
 
         .action-group-left {
             display: flex;
             gap: 9px;
             align-items: center;
-            flex-wrap: wrap
+            flex-wrap: wrap;
+            min-width: 0;
+            max-width: 100%
         }
 
         .add-btn,
@@ -207,7 +218,9 @@
             font-size: 13px;
             display: inline-flex;
             align-items: center;
-            gap: 7px
+            gap: 7px;
+            white-space: nowrap;
+            flex: none
         }
 
         .add-btn,
@@ -252,9 +265,9 @@
 
         .search-wrapper {
             height: 41px;
-            min-width: 260px;
+            min-width: 200px;
             max-width: 430px;
-            flex: 1;
+            flex: 1 1 240px;
             display: flex;
             align-items: center;
             gap: 7px;
@@ -271,7 +284,8 @@
             outline: 0;
             background: transparent;
             color: var(--text);
-            font-size: 13px
+            font-size: 13px;
+            min-width: 0
         }
 
         .filter-select,
@@ -287,6 +301,11 @@
             outline: 0;
             padding: 0 11px;
             font-size: 13px
+        }
+
+        .filter-select {
+            flex: none;
+            max-width: 100%
         }
 
         .filter-select:focus,
@@ -380,7 +399,8 @@
             display: flex;
             gap: 6px;
             align-items: center;
-            justify-content: center
+            justify-content: center;
+            flex-wrap: nowrap
         }
 
         .action-icon-btn {
@@ -392,7 +412,8 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px
+            font-size: 14px;
+            flex: none
         }
 
         .action-icon-btn:hover {
@@ -416,7 +437,8 @@
             justify-content: space-between;
             align-items: center;
             font-size: 11px;
-            color: var(--muted)
+            color: var(--muted);
+            gap: 10px
         }
 
         .modal-overlay {
@@ -453,7 +475,10 @@
             padding: 15px 19px;
             display: flex;
             align-items: center;
-            justify-content: space-between
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+            flex: none
         }
 
         .modal-header h3 {
@@ -464,12 +489,15 @@
             background: transparent;
             border: 0;
             color: #fff;
-            font-size: 20px
+            font-size: 20px;
+            flex: none
         }
 
         .modal-body {
             padding: 19px;
-            overflow: auto
+            overflow: auto;
+            flex: 1 1 auto;
+            min-height: 0
         }
 
         .modal-footer {
@@ -478,19 +506,22 @@
             background: #f8fafc;
             display: flex;
             justify-content: flex-end;
-            gap: 9px
+            gap: 9px;
+            flex-wrap: wrap;
+            flex: none
         }
 
         .form-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 14px
         }
 
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 6px
+            gap: 6px;
+            min-width: 0
         }
 
         .form-group.full {
@@ -505,13 +536,19 @@
             letter-spacing: .35px
         }
 
+        .form-group input,
+        .form-group select {
+            width: 100%
+        }
+
         .form-group input[readonly] {
             background: #f2f4f7
         }
 
-        .history-summary {
+        .history-summary,
+        .expense-summary {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 10px;
             margin-bottom: 14px
         }
@@ -520,7 +557,8 @@
             padding: 12px;
             border: 1px solid var(--border);
             border-radius: 10px;
-            background: #f8fafc
+            background: #f8fafc;
+            min-width: 0
         }
 
         .mini-stat small {
@@ -534,29 +572,13 @@
         .mini-stat strong {
             display: block;
             margin-top: 4px;
-            font-size: 17px
+            font-size: 17px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
         }
 
-        .history-toolbar {
-            display: flex;
-            gap: 9px;
-            flex-wrap: wrap;
-            margin-bottom: 12px
-        }
-
-        .history-toolbar input,
-        .history-toolbar select {
-            height: 39px
-        }
-
-
-        .expense-summary {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin-bottom: 14px
-        }
-
+        .history-toolbar,
         .expense-toolbar {
             display: flex;
             gap: 9px;
@@ -564,10 +586,14 @@
             margin-bottom: 12px
         }
 
+        .history-toolbar input,
+        .history-toolbar select,
         .expense-toolbar input,
         .expense-toolbar select {
             height: 39px;
-            min-width: 145px
+            min-width: 145px;
+            flex: 1 1 160px;
+            max-width: 100%
         }
 
         .expense-report-actions {
@@ -760,7 +786,7 @@
 
         .settings-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 15px
         }
 
@@ -793,7 +819,8 @@
             border-radius: 9px;
             box-shadow: var(--shadow-lg);
             font-size: 12px;
-            display: none
+            display: none;
+            max-width: calc(100vw - 36px)
         }
 
         #exportCanvas {
@@ -827,7 +854,8 @@
             padding: 22px 28px;
             display: flex;
             justify-content: space-between;
-            gap: 20px
+            gap: 20px;
+            flex-wrap: wrap
         }
 
         .voucher-head h1 {
@@ -867,7 +895,7 @@
 
         .voucher-details {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             border: 1px solid var(--border);
             border-radius: 10px;
             overflow: hidden;
@@ -903,7 +931,7 @@
 
         .voucher-totals {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
             border: 1px solid var(--border);
             border-radius: 10px;
             overflow: hidden
@@ -1022,40 +1050,186 @@
             }
         }
 
-        @media(max-width:1100px) {
+        /* =========================================================
+           RESPONSIVE DESKTOP LAYOUT ENHANCEMENTS
+           Every option / button remains visible. When a screen is
+           narrow, toolbars and button groups become horizontally
+           scrollable so nothing is clipped or lost.
+           ========================================================= */
+
+        /* Horizontally scrollable button groups (used on narrow desktops) */
+        .scroll-x {
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin
+        }
+
+        .scroll-x::-webkit-scrollbar {
+            height: 6px
+        }
+
+        .scroll-x::-webkit-scrollbar-track {
+            background: transparent
+        }
+
+        .scroll-x::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px
+        }
+
+        /* Extra-wide desktops (>1700px) — a touch more breathing room */
+        @media (min-width: 1700px) {
+            main {
+                padding: 22px 30px
+            }
+
+            header {
+                padding: 0 30px
+            }
+
             .cards {
-                grid-template-columns: repeat(4, 1fr)
+                grid-template-columns: repeat(auto-fit, minmax(170px, 1fr))
             }
         }
 
-        @media(max-width:700px) {
+        /* Standard laptops (<=1400px) */
+        @media (max-width: 1400px) {
+            .cards {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr))
+            }
+
+            .header-brand h3 {
+                font-size: 16px
+            }
+        }
+
+        /* Small laptops (<=1200px) */
+        @media (max-width: 1200px) {
+            main {
+                padding: 16px
+            }
+
+            header {
+                padding: 0 16px
+            }
+
+            .toolbar-container {
+                align-items: stretch
+            }
+
+            .action-group-left {
+                flex: 1 1 100%
+            }
+
+            .search-wrapper {
+                flex: 1 1 220px;
+                max-width: none
+            }
+
+            .filter-select {
+                flex: 1 1 150px
+            }
+
+            .form-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+            }
+        }
+
+        /* Compact desktops (<=1000px) — button rows become scrollable */
+        @media (max-width: 1000px) {
+
+            .action-group-left,
+            .expense-report-actions,
+            .history-toolbar,
+            .expense-toolbar {
+                overflow-x: auto;
+                overflow-y: hidden;
+                flex-wrap: nowrap;
+                padding-bottom: 4px;
+                scrollbar-width: thin
+            }
+
+            .action-group-left::-webkit-scrollbar,
+            .expense-report-actions::-webkit-scrollbar,
+            .history-toolbar::-webkit-scrollbar,
+            .expense-toolbar::-webkit-scrollbar {
+                height: 6px
+            }
+
+            .action-group-left::-webkit-scrollbar-thumb,
+            .expense-report-actions::-webkit-scrollbar-thumb,
+            .history-toolbar::-webkit-scrollbar-thumb,
+            .expense-toolbar::-webkit-scrollbar-thumb {
+                background: #cbd5e1;
+                border-radius: 3px
+            }
+
+            .history-toolbar input,
+            .history-toolbar select,
+            .expense-toolbar input,
+            .expense-toolbar select {
+                flex: 0 0 auto
+            }
+
+            .cards {
+                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr))
+            }
+        }
+
+        /* Narrow desktops / small windows (<=900px) */
+        @media (max-width: 900px) {
+            main {
+                padding: 13px;
+                gap: 13px
+            }
+
             header {
                 padding: 0 13px
             }
 
+            .cards {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 10px
+            }
+
+            .card-item {
+                padding: 11px 12px
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr
+            }
+
+            .settings-grid {
+                grid-template-columns: 1fr
+            }
+
+            .modal-overlay {
+                padding: 10px
+            }
+
+            .modal-card {
+                max-height: 94vh
+            }
+
+            .modal-footer {
+                justify-content: stretch
+            }
+
+            .modal-footer button {
+                flex: 1 1 auto;
+                justify-content: center
+            }
+        }
+
+        @media (max-width: 700px) {
             .header-brand h3 {
                 display: none
             }
 
             .top-info {
                 display: none
-            }
-
-            main {
-                padding: 13px
-            }
-
-            .cards {
-                grid-template-columns: repeat(2, 1fr)
-            }
-
-            .form-grid,
-            .settings-grid {
-                grid-template-columns: 1fr
-            }
-
-            .history-summary {
-                grid-template-columns: repeat(2, 1fr)
             }
 
             footer {
@@ -1107,6 +1281,31 @@
 
             .signature {
                 width: 45%
+            }
+        }
+
+        /* Keep table + summary panels usable on very small windows */
+        @media (max-width: 560px) {
+            .mini-stat strong {
+                font-size: 15px
+            }
+
+            .modal-footer button {
+                flex: 1 1 100%
+            }
+        }
+
+        @media (max-height: 700px) {
+            .modal-card {
+                max-height: 96vh
+            }
+
+            .modal-body {
+                padding: 14px
+            }
+
+            .modal-footer {
+                padding: 10px 14px
             }
         }
     </style>
@@ -1275,7 +1474,15 @@
                     <div class="setting-card">
                         <h4>Expense Management</h4>
                         <p>Record institute expenses such as rent, utilities, salaries, supplies and other operating costs.</p>
-                        <button class="btn-danger" id="openExpenseSettingsBtn">＋ Add Expense</button><button class="btn-secondary" id="openExpenseReportSettingsBtn" style="margin-left:8px">📋 View Report</button>
+                        <div style="display:flex;gap:8px;flex-wrap:wrap">
+                            <button class="btn-danger" id="openExpenseSettingsBtn">＋ Add Expense</button>
+                            <button class="btn-secondary" id="openExpenseReportSettingsBtn">📋 View Report</button>
+                        </div>
+                    </div>
+                    <div class="setting-card">
+                        <h4>Developer</h4>
+                        <p>Open the developer profile and administration console in this same window.</p>
+                        <button class="btn-primary" id="openDeveloperBtn">👨‍💻 Developer Profile</button>
                     </div>
                     <div class="setting-card">
                         <h4>Danger Zone</h4>
@@ -1311,7 +1518,10 @@
                 <nav class="side-nav"><button data-page="coursesPage">📚 Courses</button><button
                         id="sidebarAddStudentBtn">➕ Add Student</button></nav>
                 <div class="nav-section">System</div>
-                <nav class="side-nav"><button data-page="settingsPage">⚙️ Settings</button></nav>
+                <nav class="side-nav">
+                    <button data-page="settingsPage">⚙️ Settings</button>
+                    <button id="sidebarDeveloperBtn">👨‍💻 Developer</button>
+                </nav>
             </div>
             <div class="sidebar-footer"><button class="logout-btn" id="logoutBtn">↪ Logout</button></div>
         </aside>
@@ -1691,6 +1901,7 @@
         const API_BASE = window.HARIS_API_BASE || "https://fridaysoftwaretechnology.pythonanywhere.com";
         const READ_URL = API_BASE + "/haris/read";
         const SAVE_URL = API_BASE + "/haris/save";
+        const DEVELOPER_URL = "https://fridaysoftwaretechnology.github.io/admin/";
 
         const DEFAULT_DB = { auth: { username: "admin", password: "password" }, theme: "#C99A00", students: [], courses: [], payments: [], history: [], expenses: [] };
         let database = structuredClone(DEFAULT_DB);
@@ -1839,6 +2050,15 @@
 
         function showPage(id) { document.querySelectorAll(".page").forEach(p => p.style.display = p.id === id ? "flex" : "none"); document.querySelectorAll(".side-nav button[data-page]").forEach(b => b.classList.toggle("active", b.dataset.page === id)); closeSidebar(); if (id === "coursesPage") renderCourses() }
         function openSidebar() { $("sidebarWindow").classList.add("active") } function closeSidebar() { $("sidebarWindow").classList.remove("active") }
+
+        /* =========================================================
+           DEVELOPER OPTION
+           Opens the developer profile in the SAME window.
+           ========================================================= */
+        function openDeveloperProfile() {
+            closeSidebar();
+            window.location.href = DEVELOPER_URL;
+        }
 
         function studentReceived(id) { return database.payments.filter(p => String(p.studentId) === String(id)).reduce((a, p) => a + (Number(p.amount) || 0), 0) }
         function getBalance(s) { const r = studentReceived(s.id); s.received = r; return Math.max(0, (Number(s.fee) || 0) - r) }
@@ -2417,6 +2637,11 @@ tfoot td { font-weight:700; background:#f2f4f7; }
             document.querySelectorAll(".side-nav button[data-page]").forEach(b => b.onclick = () => showPage(b.dataset.page));
             $("sidebarHistoryBtn").onclick = () => { closeSidebar(); openHistoryModal() };
             $("sidebarAddStudentBtn").onclick = () => { closeSidebar(); openStudentModal(-1) };
+
+            /* Developer option — same-window navigation */
+            $("sidebarDeveloperBtn").onclick = openDeveloperProfile;
+            $("openDeveloperBtn").onclick = openDeveloperProfile;
+
             $("openAddModalBtn").onclick = () => openStudentModal(-1); $("closeStudentModalBtn").onclick = closeStudentModal; $("cancelStudentModalBtn").onclick = closeStudentModal;
             $("sfee").oninput = calculateBalance; $("sreceived").oninput = calculateBalance; $("studentForm").onsubmit = saveStudent;
             $("searchInput").oninput = renderStudents; $("statusFilter").onchange = renderStudents;
