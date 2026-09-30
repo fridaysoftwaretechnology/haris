@@ -1647,11 +1647,13 @@
                 </div>
                 <div class="history-toolbar"><input id="historySearch"
                         placeholder="Search student, receipt, method..."><input type="date"
-                        id="historyDateFilter"><select id="historyStudentFilter">
+                        id="historyDateFrom" title="From date" aria-label="From date"><input type="date"
+                        id="historyDateTo" title="To date" aria-label="To date"><select id="historyStudentFilter">
                         <option value="">All Students</option>
                     </select><button class="btn-primary" id="addPaymentBtn">＋ Add Payment</button><button
                         class="btn-success" id="exportHistoryPdfBtn">📄 Export PDF</button><button class="btn-secondary"
-                        id="exportHistoryCsvBtn">⬇ CSV</button></div>
+                        id="exportHistoryCsvBtn">⬇ CSV</button><button class="btn-secondary"
+                        id="clearHistoryDateBtn" title="Clear date range">✕ Dates</button></div>
                 <div class="main-table" style="height:390px">
                     <div class="table-responsive">
                         <table style="min-width:850px">
@@ -2143,7 +2145,20 @@
         function paymentCourse(p) { return database.students.find(s => String(s.id) === String(p.studentId))?.course || "—" }
         function openHistoryModal() { populateHistoryStudentFilter(); renderHistory(); $("historyModal").style.display = "flex" } function closeHistoryModal() { $("historyModal").style.display = "none" }
         function populateHistoryStudentFilter() { const cur = $("historyStudentFilter").value; $("historyStudentFilter").innerHTML = '<option value="">All Students</option>' + database.students.map(s => `<option value="${safe(s.id)}">${safe(s.name)}</option>`).join(""); $("historyStudentFilter").value = cur }
-        function filteredPayments() { const q = $("historySearch").value.toLowerCase().trim(), date = $("historyDateFilter").value, student = $("historyStudentFilter").value; return database.payments.filter(p => { const text = [paymentStudentName(p), paymentCourse(p), p.method, p.receipt, p.note].join(" ").toLowerCase(); return (!q || text.includes(q)) && (!date || p.date === date) && (!student || String(p.studentId) === String(student)) }) }
+        function filteredPayments() {
+            const q = $("historySearch").value.toLowerCase().trim();
+            const from = $("historyDateFrom").value;
+            const to = $("historyDateTo").value;
+            const student = $("historyStudentFilter").value;
+            return database.payments.filter(p => {
+                const text = [paymentStudentName(p), paymentCourse(p), p.method, p.receipt, p.note].join(" ").toLowerCase();
+                const d = String(p.date || "");
+                return (!q || text.includes(q))
+                    && (!from || d >= from)
+                    && (!to || d <= to)
+                    && (!student || String(p.studentId) === String(student));
+            });
+        }
         function renderHistory() {
             const list = filteredPayments(), body = $("historyTableBody"), total = list.reduce((a, p) => a + (Number(p.amount) || 0), 0), todayTotal = database.payments.filter(p => p.date === today()).reduce((a, p) => a + (Number(p.amount) || 0), 0), outstanding = database.students.reduce((a, s) => a + getBalance(s), 0);
             $("historyCount").textContent = list.length; $("historyTotal").textContent = money(total); $("historyToday").textContent = money(todayTotal); $("historyOutstanding").textContent = money(outstanding);
@@ -2645,7 +2660,8 @@ tfoot td { font-weight:700; background:#f2f4f7; }
             $("openAddModalBtn").onclick = () => openStudentModal(-1); $("closeStudentModalBtn").onclick = closeStudentModal; $("cancelStudentModalBtn").onclick = closeStudentModal;
             $("sfee").oninput = calculateBalance; $("sreceived").oninput = calculateBalance; $("studentForm").onsubmit = saveStudent;
             $("searchInput").oninput = renderStudents; $("statusFilter").onchange = renderStudents;
-            $("openHistoryBtn").onclick = openHistoryModal; $("closeHistoryModalBtn").onclick = closeHistoryModal; $("historySearch").oninput = renderHistory; $("historyDateFilter").onchange = renderHistory; $("historyStudentFilter").onchange = renderHistory;
+            $("openHistoryBtn").onclick = openHistoryModal; $("closeHistoryModalBtn").onclick = closeHistoryModal; $("historySearch").oninput = renderHistory; $("historyDateFrom").onchange = renderHistory; $("historyDateTo").onchange = renderHistory; $("historyStudentFilter").onchange = renderHistory;
+            $("clearHistoryDateBtn").onclick = () => { $("historyDateFrom").value = ""; $("historyDateTo").value = ""; renderHistory(); };
             $("addPaymentBtn").onclick = () => openPaymentModal(""); $("exportHistoryPdfBtn").onclick = exportHistoryPDF; $("exportHistoryCsvBtn").onclick = exportHistoryCSV; $("closePaymentModalBtn").onclick = closePaymentModal; $("cancelPaymentBtn").onclick = closePaymentModal; $("paymentForm").onsubmit = savePayment;
             $("openExpenseModalBtn").onclick = openExpenseModal; $("openExpenseSettingsBtn").onclick = openExpenseModal; $("closeExpenseModalBtn").onclick = closeExpenseModal; $("cancelExpenseBtn").onclick = closeExpenseModal; $("expenseForm").onsubmit = saveExpense; $("openExpenseReportBtn").onclick = openExpenseReport; $("openExpenseReportSettingsBtn").onclick = openExpenseReport; $("sidebarExpenseReportBtn").onclick = () => { closeSidebar(); openExpenseReport() }; $("closeExpenseReportBtn").onclick = closeExpenseReport; $("expenseReportAddBtn").onclick = () => { closeExpenseReport(); openExpenseModal() }; $("expenseReportSearch").oninput = renderExpenseReport; $("expenseReportCategory").onchange = renderExpenseReport; $("expenseReportMethod").onchange = renderExpenseReport; $("expenseReportFrom").onchange = renderExpenseReport; $("expenseReportTo").onchange = renderExpenseReport; $("clearExpenseFiltersBtn").onclick = () => { $("expenseReportSearch").value = ""; $("expenseReportCategory").value = ""; $("expenseReportMethod").value = ""; $("expenseReportFrom").value = ""; $("expenseReportTo").value = ""; renderExpenseReport() }; $("exportExpensePdfBtn").onclick = exportExpensePDF; $("exportExpenseCsvBtn").onclick = exportExpenseCSV; $("printExpenseReportBtn").onclick = printExpenseReport;
             $("openExportModalBtn").onclick = () => { $("exportDate").value ||= today(); $("exportMonth").value ||= today().slice(0, 7); $("exportYear").value ||= new Date().getFullYear(); $("exportModal").style.display = "flex" };
